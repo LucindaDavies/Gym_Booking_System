@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1> Instructors </h1>
+
+<nav>
+    <ul>
+        <a  href="/">Home</a>
+        <a  href="/members">Members</a>
+        <a  href="/instructors">Instructors</a>
+        <a  href="/fitness_classes">Fitness Classes</a>
+    </ul>
+</nav>
+
+{% for instructor in instructors %}
+
+<section>
+    <p> Name: {{ instructor.name }} </p>
+
+
+    <a href="/instructors/{{ instructor.id }}/edit">Edit Instructor</a>
+    <form action="/instructors/{{ instructor.id }}/delete" method="POST">
+        <input type="submit" value="Delete">
+    </form>
+</section>
+
+{% endfor %}
+
+<a href="instructors/new">Add a new Instructor</a>
+
+
+
+{% endblock %}

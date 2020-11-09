@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Create a New Member</h1>
+
+<nav>
+    <ul>
+        <a  href="/">Home</a>
+        <a  href="/members">Members</a>
+        <a  href="/instructors">Instructors</a>
+        <a  href="/fitness_classes">Fitness Classes</a>
+    </ul>
+</nav>
+
+<form action="/members" method="POST">
+    <section>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <label for="gender">Gender</label>
+        <input type="text" id="gender" name="gender">
+        <label for="age">Age</label>
+        <input type="int" id="age" name="age">
+
+        <input type='submit' value="Members">   
+    </section>
+</form>
+
+
+{% endblock %}

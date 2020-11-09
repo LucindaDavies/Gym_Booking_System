@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Update Members Information</h1>
+
+<nav>
+    <ul>
+        <a  href="/">Home</a>
+        <a  href="/members">Members</a>
+        <a  href="/instructors">Instructors</a>
+        <a  href="/fitness_classes">Fitness Classes</a>
+    </ul>
+</nav>
+
+<form action="/members/{{ member.id }}" method="POST">
+    <section>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ member.name }}">
+        <label for="gender">Gender:</label>
+        <input type="text" id="gender" name="gender" value="{{ member.gender }}">
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age" value="{{ member.age }}">
+        <input type="submit">
+    </section>
+</form>
+
+{% endblock %}

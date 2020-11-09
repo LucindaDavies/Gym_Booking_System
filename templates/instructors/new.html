@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Create a New Instructor</h1>
+
+<nav>
+    <ul>
+        <a  href="/">Home</a>
+        <a  href="/members">Members</a>
+        <a  href="/instructors">Instructors</a>
+        <a  href="/fitness_classes">Fitness Classes</a>
+    </ul>
+</nav>
+
+<form action="/instructors" method="POST">
+    <section>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">  
+        <input type='submit' value="Save"> 
+    </section>
+</form>
+
+
+{% endblock %}

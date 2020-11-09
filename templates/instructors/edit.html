@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Update Members Information</h1>
+
+<nav>
+    <ul>
+        <a  href="/">Home</a>
+        <a  href="/members">Members</a>
+        <a  href="/instructors">Instructors</a>
+        <a  href="/fitness_classes">Fitness Classes</a>
+    </ul>
+</nav>
+
+<form action="/instructors/{{ instructor.id }}" method="POST">
+    <section>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ instructor.name }}">
+
+</form>
+
+{% endblock %}
