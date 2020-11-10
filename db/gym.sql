@@ -22,8 +22,8 @@ CREATE TABLE instructors (
 CREATE TABLE fitness_classes (
     id SERIAL PRIMARY KEY,
     name VARCHAR (255),
-    class_time VARCHAR (255),
-    duration INT,
+    start_time TIMESTAMP,
+    end_time TIMESTAMP,
     class_type VARCHAR(255),
     instructor_id INT REFERENCES instructors(id)
 );

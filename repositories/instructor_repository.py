@@ -23,7 +23,7 @@ def select_all():
     sql = "SELECT * FROM instructors"
     results = run_sql(sql)
     for result in results:
-        instructor = Instructor(result["name"])
+        instructor = Instructor(result["name"], result['id'])
         instructors.append(instructor)
     return instructors
 
@@ -43,5 +43,5 @@ def select(id):
     values = [id]
     result = run_sql(sql, values)[0]
     if result is not None:
-        instructor = Instructor(result["name"])
+        instructor = Instructor(result["name"], result['id'])
     return instructor 

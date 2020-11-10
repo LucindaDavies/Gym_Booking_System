@@ -1,4 +1,5 @@
 import pdb
+import datetime
 
 from models.instructor import Instructor
 import repositories.instructor_repository as instructor_repository
@@ -38,8 +39,8 @@ print(all_members)
 
 # FITNESS_CLASSES
 
-# fitness_class1 = Fitness_Class("Grit", "6am", "45 mins", "high intensity cardio")
-# fitness_class_repository.save(fitness_class1)
+fitness_class1 = Fitness_Class("Grit", datetime.datetime(2020, 11, 13, 6, 0), datetime.datetime(2020, 11, 13, 7, 0), "high intensity cardio", instructor1)
+fitness_class_repository.save(fitness_class1)
 
 # fitness_class2 = Fitness_Class("spin", "9am", "60 mins", "cardio")
 # fitness_class_repository.save(fitness_class2)

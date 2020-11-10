@@ -1,3 +1,4 @@
+import pdb
 from flask import Blueprint, Flask, redirect, render_template, request
 
 from models.instructor import Instructor
@@ -23,19 +24,10 @@ def create_instructor():
     instructor_repository.save(new_instructor)
     return redirect("/instructors")
 
+
 @instructors_blueprint.route("/instructors/<id>/delete", methods=["POST"])
 def delete_instructor(id):
     instructor_repository.delete(id)
     return redirect("/instructors")
 
-@instructors_blueprint.route("/instructors/<id>/edit", methods = ["GET"])
-def edit_instructor(id):
-    instructor = instructor_repository.select(id)
-    return render_template("/instructors/edit.html", instructor=instructor)
 
-@instructors_blueprint.route("/instructors/<id>", methods = ["POST"])
-def update_instructor(id):
-    name = request.form["name"]
-    instructor = Instructor(name)
-    instructor_repository.update(instructor)
-    return redirect("/instructors")
