@@ -10,6 +10,9 @@ import repositories.member_repository as member_repository
 from models.fitness_class import Fitness_Class
 import repositories.fitness_class_repository as fitness_class_repository
 
+from models.booking import Booking
+import repositories.booking_repository as booking_repository
+
 fitness_class_repository.delete_all()
 instructor_repository.delete_all()
 member_repository.delete_all()
@@ -47,3 +50,9 @@ fitness_class_repository.save(fitness_class1)
 
 # fitness_class3 = Fitness_Class("pump", "8pm", "30 mins", "cardio weight")
 # fitness_class_repository.save(fitness_class3)
+
+booking1 = Booking(member1, fitness_class1)
+booking_repository.save(booking1)
+
+booking2 = Booking(member3, fitness_class1)
+booking_repository.save(booking2)

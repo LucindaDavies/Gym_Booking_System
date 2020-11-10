@@ -4,6 +4,8 @@ from models.member import Member
 import repositories.instructor_repository as instructor_repository
 import repositories.member_repository as member_repository
 import repositories.fitness_class_repository as fitness_class_repository
+import repositories.booking_repository as booking_repository
+
 
 members_blueprint = Blueprint("members", __name__)
 

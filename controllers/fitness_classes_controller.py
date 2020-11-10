@@ -6,6 +6,7 @@ from models.fitness_class import Fitness_Class
 import repositories.instructor_repository as instructor_repository
 import repositories.member_repository as member_repository
 import repositories.fitness_class_repository as fitness_class_repository
+import repositories.booking_repository as booking_repository
 import datetime
 
 fitness_classes_blueprint = Blueprint("fitness_classes", __name__)
@@ -46,6 +47,12 @@ def create_fitness_class():
     instructor = instructor_repository.select(instructor_id)
     new_fitness_class = Fitness_Class(name, f"{start_date} {start_time}", f"{end_date} {end_time}", class_type, instructor)
     fitness_class_repository.save(new_fitness_class)
+    return redirect("/fitness_classes")
+
+
+@fitness_classes_blueprint.route("/fitness_classes/<id>/delete", methods=["POST"])
+def delete_fitness_class(id):
+    fitness_class_repository.delete(id)
     return redirect("/fitness_classes")
 
   

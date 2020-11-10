@@ -2,8 +2,12 @@ from db.run_sql import run_sql
 from models.fitness_class import Fitness_Class
 from models.instructor import Instructor
 from models.member import Member
+from models.booking import Booking
+
 import repositories.fitness_class_repository as fitness_class_repository
 import repositories.instructor_repository as instructor_repository
+import repositories.booking_repository as booking_repository
+
 
 def delete_all():
     sql = "DELETE FROM members"

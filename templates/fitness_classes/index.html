@@ -10,12 +10,13 @@
     <p>End Time: {{ fitness_class.end_time }} </p>
     <p>Class Type: {{ fitness_class.class_type }} </p>
     <p>Instructor: {{ fitness_class.instructor }}</p>
+    <form action="/fitness_classes/{{ fitness_class.id }}/delete" method="POST">
+        <input type="submit" value="Delete">
     </form>
 </section>
 {% endfor %}
 
 <a href="fitness_classes/new">Add a Fitness Class</a>
-
 
 
 {% endblock %}

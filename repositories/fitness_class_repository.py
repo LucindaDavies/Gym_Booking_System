@@ -3,9 +3,12 @@ from db.run_sql import run_sql
 from models.fitness_class import Fitness_Class
 from models.instructor import Instructor
 from models.member import Member
+from models.booking import Booking
+
 
 import repositories.member_repository as member_repository
 import repositories.instructor_repository as instructor_repository
+import repositories.booking_repository as booking_repository
 
 def delete_all():
     sql = "DELETE FROM fitness_classes"
@@ -39,5 +42,10 @@ def select(id):
 def update(fitness_class):
     sql = "UPDATE fitness_classes SET (name, start_time, end_time, class_type, instructor_id) = (%s, %s, %s, %s, %s) WHERE id = %s "
     values = [fitness_class.name, fitness_class.start_time, fitness_class.end_time, fitness_class.class_type, fitness_class.instructor.id]
+    run_sql(sql, values)
+
+def delete(id):
+    sql = "DELETE FROM fitness_classes WHERE id =%s"
+    values = [id]
     run_sql(sql, values)
 
