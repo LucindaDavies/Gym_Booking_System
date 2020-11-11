@@ -9,6 +9,10 @@
         <a  href="/members">Members</a>
         <a  href="/instructors">Instructors</a>
         <a  href="/fitness_classes">Fitness Classes</a>
+        <a  href="/bookings">Bookings</a>
+        <a  href="/upcoming_fitness_classes">Upcoming Fitness Classes</a>
+        <a  href="/upcoming_fitness_classes">Upcoming Fitness Classes</a>
+
     </ul>
 </nav>
 
@@ -21,14 +25,14 @@
 
     <a href="/members/{{ member.id }}/edit">Edit Member</a>
     <form action="/members/{{ member.id }}/delete" method="POST">
-        <input type="submit" value="Delete">
+        <input class="button" type="submit" value="Delete">
     </form>
 </section>
 
 {% endfor %}
-
-<a href="members/new">Add a new Member</a>
-
+<section class="button_section">
+    <a class = "add_button" href="members/new">Add a new Member</a>
+</section>
 
 
 {% endblock %}

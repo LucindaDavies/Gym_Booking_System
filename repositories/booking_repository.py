@@ -49,5 +49,10 @@ def save(booking):
     booking.id = id
     return booking
 
+def update(booking):
+    sql = "UPDATE bookings SET (member_id, fitness_class_id) = (%s,%s) WHERE id = %s"
+    values = [booking.member.id, booking.fitness_class.id, booking.id]
+    run_sql(sql, values)
+
 
 

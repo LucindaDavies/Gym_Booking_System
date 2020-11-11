@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1> Instructors </h1>
+<h1>Bookings</h1>
 
 <nav>
     <ul>
@@ -9,29 +9,28 @@
         <a  href="/members">Members</a>
         <a  href="/instructors">Instructors</a>
         <a  href="/fitness_classes">Fitness Classes</a>
-        <a  href="/bookings">Bookings</a>
+        <a href="/bookings">Bookings</a>
         <a  href="/upcoming_fitness_classes">Upcoming Fitness Classes</a>
-
 
     </ul>
 </nav>
 
-{% for instructor in instructors %}
+{% for booking in bookings %}
 
 <section>
-    <p> Name: {{ instructor.name }} </p>
-
-
- 
-    <form action="/instructors/{{ instructor.id }}/delete" method="POST">
+    <p>Member: {{ booking.member.name }} </p>
+    <p>Fitness Class: {{ booking.fitness_class.name }} </p>
+    <p>Date/Time: {{booking.fitness_class.start_time}} </p>
+    <a href="/bookings/{{ booking.id }}/edit">Edit Bookings</a>   
+    <form action="/bookings/{{ booking.id }}/delete" method="POST">
         <input type="submit" value="Delete">
     </form>
 </section>
 
 {% endfor %}
 <section class="button_section">
-    <a class="add_button" href="instructors/new">Add a new Instructor</a>
-
+    <a class="add_button" href="bookings/new">Add a new Booking</a>    
 </section>
+
 
 {% endblock %}

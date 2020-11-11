@@ -49,3 +49,21 @@ def delete(id):
     values = [id]
     run_sql(sql, values)
 
+def select_upcoming():
+    fitness_classes = []
+    sql = "SELECT * FROM fitness_classes WHERE start_time >= NOW() "
+    results = run_sql(sql)
+    for result in results:
+        fitness_class = Fitness_Class(result["name"], result['start_time'], result['end_time'], result['class_type'], result['instructor_id'], result['id'])
+        fitness_classes.append(fitness_class)
+    return fitness_classes
+
+def members(fitness_class):
+    members = []
+    sql = "SELECT members.* FROM members INNER JOIN bookings ON bookings.member_id = members.id WHERE fitness_class_id = %s"
+    values = [fitness_class.id]
+    results = run_sql(sql, values)
+    for row in results:
+        member = Member(row["name"], row["gender"], row["age"], row["id"])
+        members.append(member)
+    return members

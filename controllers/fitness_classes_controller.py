@@ -55,6 +55,17 @@ def delete_fitness_class(id):
     fitness_class_repository.delete(id)
     return redirect("/fitness_classes")
 
+@fitness_classes_blueprint.route("/upcoming_fitness_classes")
+def upcoming_fitness_classes():
+    fitness_classes = fitness_class_repository.select_upcoming()
+    return render_template("fitness_classes/upcoming.html", fitness_classes=fitness_classes)
   
+
+
+@fitness_classes_blueprint.route("/fitness_classes/<id>/show_members", methods = ["GET"])
+def show_members(id):
+    fitness_class = fitness_class_repository.select(id)
+    members = fitness_class_repository.members(fitness_class)
+    return render_template("fitness_classes/show_members.html", fitness_class=fitness_class, members=members)
 
 
