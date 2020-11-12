@@ -16,22 +16,26 @@
     </ul>
 </nav>
 
-{% for instructor in instructors %}
-
-<section>
-    <p> Name: {{ instructor.name }} </p>
-
-
- 
-    <form action="/instructors/{{ instructor.id }}/delete" method="POST">
-        <input type="submit" value="Delete">
-    </form>
-</section>
-
-{% endfor %}
 <section class="button_section">
     <a class="add_button" href="instructors/new">Add a new Instructor</a>
 
 </section>
+
+{% for instructor in instructors %}
+
+<section>
+    
+    <p> Name: {{ instructor.name }} </p>
+
+    <form action="/instructors/{{ instructor.id }}/delete" method="POST">
+        <input class="button" type="submit" value="Delete">
+       
+    </form>
+    <hr>
+    
+</section>
+
+{% endfor %}
+
 
 {% endblock %}

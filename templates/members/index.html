@@ -3,6 +3,8 @@
 
 <h1> Members </h1>
 
+
+
 <nav>
     <ul>
         <a  href="/">Home</a>
@@ -16,23 +18,25 @@
     </ul>
 </nav>
 
-{% for member in members %}
+<section class="button_section">
+    <a class = "add_button" href="members/new">Add a new Member</a>
+</section>
 
+{% for member in members %}
 <section>
     <p> Name: {{ member.name }} </p>
     <p> Age: {{ member.gender }} </p>
     <p> Gender: {{ member.age }} </p> 
 
-    <a href="/members/{{ member.id }}/edit">Edit Member</a>
+    <a class="edit_button" href="/members/{{ member.id }}/edit">Edit Member</a>
     <form action="/members/{{ member.id }}/delete" method="POST">
         <input class="button" type="submit" value="Delete">
     </form>
+    <hr>
 </section>
 
 {% endfor %}
-<section class="button_section">
-    <a class = "add_button" href="members/new">Add a new Member</a>
-</section>
+
 
 
 {% endblock %}

@@ -14,21 +14,24 @@
 
     </ul>
 </nav>
+<section>
+    <a class="add_button" href="fitness_classes/new">Add a Fitness Class</a>
+</section>
 
 {% for fitness_class in fitness_classes %}
 <section>
+    <!-- <hr> -->
     <p>Name: <a href="fitness_classes/{{ fitness_class.id }}/show_members">{{ fitness_class.name }} </p></a>
     <p>Start Time: {{ fitness_class.start_time }} </p>
     <p>End Time: {{ fitness_class.end_time }} </p>
     <p>Class Type: {{ fitness_class.class_type }} </p>
-    <p>Instructor: {{ fitness_class.instructor }}</p>
+    <p>Instructor: {{ fitness_class.instructor.name }}</p>
     <form action="/fitness_classes/{{ fitness_class.id }}/delete" method="POST">
-        <input type="submit" value="Delete">
+        <input class="button" type="submit" value="Delete">
     </form>
+    <hr>
 </section>
 {% endfor %}
-<section class="button_section">
-    <a class="add_button" href="fitness_classes/new">Add a Fitness Class</a>
-</section>
+
 
 {% endblock %}

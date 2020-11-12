@@ -1,31 +1,19 @@
 body {
-    
-    background-image: url("/static/img/background.jpeg");
-    color: #708090;
+    color:  #4A4A48;
+    margin-left: 10px;
 }
 
-/* img {
-    opacity: 0.1;
-} */
 
+ul {
+    background-color: #4A4A48;
+    padding: 25px;
+    padding-top: 30px;
+  }
 
-
-
-
-
-
-nav > ul > a {
-    color: #708090;
-    display: inline-block;
-    margin-right: 20px;
-    font-size: 25px;
-}
-
-nav {
-    float: center;
-    padding-left: 550px;
-    list-style: none;
-    margin-top: 0px;
+.lorem {
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 30px;
 }
 
 h1 { 
@@ -39,9 +27,10 @@ h1 {
 
 nav > ul > a:link,
 nav > ul > a:visited {
-    color: #708090;
+    color: whitesmoke;
     text-decoration: none;
     transition: border-bottom 0.5s;
+    padding-left: 10px;
 
 }
 
@@ -50,38 +39,55 @@ nav > ul > a:active {
     border-bottom: 2px solid #e67e22;
 }
 
-.button {
-    background-color: #e67e22;
-    border: #e67e22;
-    color: whitesmoke;
+.button { 
+    background-color: whitesmoke;
+    border: 1px solid black;
+    color: black;
+    border-radius: 10px; 
+    margin-top: 7px;
+    margin-left: 15px;
+} 
+
+.button:link {
+    border: 1px solid black;
 }
 
-/* .add_button:link {
-    border: 1px solid #e67e22;
-    color: #e67e22; */
+.button:hover {
+    border: 1px solid black;
+    color: black;
+    background-color: #A9A9A9;
+    transition: background-color 0.4s, border 0.5s, color, 0.5s;
+}
 
-/* } */
+hr{
+    height: 1px;
+    background-color: #e67e22;
+    border: none;
+}
+.add_button:link {
+    border: 1px solid #e67e22;
+    color: #e67e22;
+}
 
 .button_section {
-    margin-top: 200px;
-    margin-left: 40%;
+    margin-top: 20px;
+    margin-left: 10px;
     font-weight: 500;
 }
 
 .add_button:hover {
-    border: 1px solid #e67e22;
-    color: white;
-    background: #e67e22;
+    border: 1px solid black;
+    color: black;
+    background: #f3ac6e;
     transition: background-color 0.4s, border 0.5s, color, 0.5s;
     border-radius: 250px;
-    /* font-weight: 200%; */
-    padding: 4px;;
+    padding: 4px;
 }
 
 .add_button {
     border: 1px solid #e67e22;
     background: whitesmoke;
-    color: #e67e22;
+    color: black;
     border-radius: 10px;
     font-weight: 200%;
     padding: 4px;
@@ -91,3 +97,42 @@ nav > ul > a:active {
 a {
     text-decoration: none;
 }
+
+
+.edit_button {
+    background-color: whitesmoke;
+    border: 1px solid black;
+    color: black;
+    /* float: left; */
+    border-radius: 10px; 
+    padding: 1px;
+    margin-bottom: 2px;
+}
+
+.edit_button:link {
+    border: 1px solid black;
+}
+
+.edit_button:hover {
+    border: 1px solid black;
+    color: black;
+    background-color: #d5d2d2;
+    transition: background-color 0.4s, border 0.5s, color, 0.5s;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #4A4A48;
+    color: white;
+    text-align: center;
+  }
+
+  .home_hr{
+    height: 1px;
+    background-color: #A9A9A9;
+    border: none;
+}
+  

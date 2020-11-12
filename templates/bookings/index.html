@@ -15,22 +15,27 @@
     </ul>
 </nav>
 
+<section>
+    <a class="add_button" href="bookings/new">Add a new Booking</a> 
+</section>
+
 {% for booking in bookings %}
 
 <section>
     <p>Member: {{ booking.member.name }} </p>
     <p>Fitness Class: {{ booking.fitness_class.name }} </p>
     <p>Date/Time: {{booking.fitness_class.start_time}} </p>
-    <a href="/bookings/{{ booking.id }}/edit">Edit Bookings</a>   
+    <a class="edit_button" href="/bookings/{{ booking.id }}/edit">Edit Bookings</a>   
     <form action="/bookings/{{ booking.id }}/delete" method="POST">
-        <input type="submit" value="Delete">
+        <input class="button" type="submit" value="Delete">
     </form>
+    <hr>
 </section>
 
 {% endfor %}
-<section class="button_section">
-    <a class="add_button" href="bookings/new">Add a new Booking</a>    
-</section>
+
+       
+
 
 
 {% endblock %}

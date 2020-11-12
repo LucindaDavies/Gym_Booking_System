@@ -19,7 +19,7 @@ member_repository.delete_all()
 
 # INSTRUCTORS
 
-instructor1 = Instructor("James")
+instructor1 = Instructor("Harvey")
 instructor_repository.save(instructor1)
 
 all_instructors = instructor_repository.select_all()

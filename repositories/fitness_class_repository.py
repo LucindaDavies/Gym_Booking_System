@@ -26,7 +26,9 @@ def select_all():
     sql = "SELECT * FROM fitness_classes"
     results = run_sql(sql)
     for result in results:
-        fitness_class = Fitness_Class(result["name"], result['start_time'], result['end_time'], result['class_type'], result['instructor_id'], result['id'])
+        print(result)
+        instructor = instructor_repository.select(result['instructor_id'])
+        fitness_class = Fitness_Class(result["name"], result['start_time'], result['end_time'], result['class_type'], instructor, result['id'])
         fitness_classes.append(fitness_class)
     return fitness_classes
 
@@ -36,7 +38,8 @@ def select(id):
     values = [id]
     result = run_sql(sql, values)[0]
     if result is not None:
-        fitness_class = Fitness_Class(result["name"], result ['start_time'], result['end_time'], result['class_type'], result['instructor_id'], result['id'] )
+        instructor = instructor_repository.select(result['instructor_id'])
+        fitness_class = Fitness_Class(result["name"], result ['start_time'], result['end_time'], result['class_type'], instructor, result['id'] )
     return fitness_class 
 
 def update(fitness_class):
@@ -51,10 +54,12 @@ def delete(id):
 
 def select_upcoming():
     fitness_classes = []
-    sql = "SELECT * FROM fitness_classes WHERE start_time >= NOW() "
+    sql = "SELECT * FROM fitness_classes WHERE start_time >= NOW()"
     results = run_sql(sql)
     for result in results:
-        fitness_class = Fitness_Class(result["name"], result['start_time'], result['end_time'], result['class_type'], result['instructor_id'], result['id'])
+        print(result)
+        instructor = instructor_repository.select(result['instructor_id'])
+        fitness_class = Fitness_Class(result["name"], result['start_time'], result['end_time'], result['class_type'], instructor, result['id'])
         fitness_classes.append(fitness_class)
     return fitness_classes
 

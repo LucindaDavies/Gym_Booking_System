@@ -16,13 +16,14 @@
 
 {% for fitness_class in fitness_classes %}
 <section>
-    <p>Name: <a href="">{{ fitness_class.name }} </p></a>
+    <p>Name: <a href="fitness_classes/{{ fitness_class.id }}/show_members"> {{ fitness_class.name }} </p></a>
     <p>Start Time: {{ fitness_class.start_time }} </p>
     <p>End Time: {{ fitness_class.end_time }} </p>
     <p>Class Type: {{ fitness_class.class_type }} </p>
-    <p>Instructor: {{ fitness_class.instructor }}</p>
+    <p>Instructor: {{ fitness_class.instructor.name }}</p>
 
     </form>
+    <hr>
 </section>
 {% endfor %}
 
