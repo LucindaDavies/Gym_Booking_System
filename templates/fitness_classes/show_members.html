@@ -3,12 +3,25 @@
 {% block content %}
 
 <h1>Fitness Class</h1>
-<ul>
+
+<nav>
+    <ul>
+        <a  href="/">Home</a>
+        <a  href="/members">Members</a>
+        <a  href="/instructors">Instructors</a>
+        <a  href="/fitness_classes">Fitness Classes</a>
+        <a href="/bookings">Bookings</a>
+        <a  href="/upcoming_fitness_classes">Upcoming Fitness Classes</a>
+
+    </ul>
+</nav>
+<ul class="show">
     <h2>{{ fitness_class.name}}</h2>
 
 
     {% for member in members %}
-    <li>{{ member.name }}</li>
+
+    <li class="show" >{{ member.name }}</li>
    
     {% endfor %}
 

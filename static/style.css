@@ -1,7 +1,7 @@
-body {
+/* body {
     color:  #4A4A48;
     margin-left: 10px;
-}
+} */
 
 
 ul {
@@ -25,6 +25,9 @@ h1 {
     text-align: center;
 }
 
+.show {
+    background-color: white;
+}
 
 nav > ul > a:link,
 nav > ul > a:visited {
@@ -131,9 +134,9 @@ a {
     text-align: center;
   }
 
-  .home_hr{
+  /* .home_hr{
     height: 1px;
     background-color: #A9A9A9;
     border: none;
-}
+} */
   
